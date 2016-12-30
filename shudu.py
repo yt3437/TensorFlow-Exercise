@@ -2,8 +2,8 @@ def cross(A,B):
     return[a+b for a in A for b in B]
 
 digits = '123456789'
-rows   = 'ABCDEFGHI'
-cols   = digits
+rows = 'ABCDEFGHI'
+cols = digits
 squares = cross(rows,cols)
 unitlist = ([cross(rows,c) for c in cols] +
             [cross(r,cols) for r in rows] +
@@ -12,7 +12,7 @@ units = dict((s,[u for u in unitlist if s in u]) for s in squares)
 peers = dict((s,set(sum(units[s],[]))-set([s]))for s in squares)
 
 def test():
-    assert len(squares)==81
+    assert len(squares) == 81
     assert len(unitlist)==27
     assert all(len(units[s])==3 for s in squares)
     assert all(len(peers[s])==20 for s in squares)

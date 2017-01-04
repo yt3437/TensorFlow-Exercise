@@ -17,9 +17,9 @@ init = tf.global_variables_initializer()
 sess.run(init)
 
 for i in range(-30,50):
-    print(i,sess.run(cost,feed_dict={W:i}))
-    W_val.append(i)
-    cost_val.append(sess.run(cost,feed_dict={W:i}))
+    print(i*0.1,sess.run(cost,feed_dict={W:i*0.1}))
+    W_val.append(i*0.1)
+    cost_val.append(sess.run(cost,feed_dict={W:i*0.1}))
 
 plt.plot(W_val,cost_val,'ro')  #ro显示为点，无此参数显示为线
 plt.xlabel('W_val')
